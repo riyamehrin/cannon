@@ -1,2 +1,2 @@
-# PRO-C23-SA-boilerplate
-boilerplate code for C23
+# PRO-C25-SA
+boilerplate code for student activituy
