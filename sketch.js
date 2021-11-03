@@ -52,6 +52,7 @@ showBoats()
 
   for (var i = 0; i < balls.length; i++) {
     showCannonBalls(balls[i], i);
+    collutionWithBoat(i);
   }
 
   cannon.display();
@@ -108,7 +109,19 @@ function showBoats() {
     boats.push(boat);
   }
 }
+function collutionWithBoat(index){
+  for (var i = 0; i < boats.length; i++){
+    if (balls[index] !== undefined && boats[i] !== undefined){
+      var collision = Matter.SAT.collides(balls[index].body, boats[i].body);
+      if(collision.collided){
+        boats[i].remove(i)
+        Matter.World.remove(world, balls[index].body);
+        delete balls[index];
 
+      }
+    }
+  }
+}
 
 
 

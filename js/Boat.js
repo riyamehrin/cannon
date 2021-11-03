@@ -20,4 +20,11 @@ class Boat {
     image(this.image, 0, this.boatPosition, this.width, this.height);
     pop();
   }
+  remove(i){
+    setTimeout(()=>{
+      Matter.World.remove(world, boats[i].body);
+      delete boats[i];
+
+    },2000)
+  }
 }
