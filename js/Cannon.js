@@ -17,6 +17,7 @@ class Cannon {
       this.angle -= 1;
     }
 
+
     push();
     translate(this.x, this.y);
     rotate(this.angle);
